@@ -16,6 +16,14 @@ h1 {
   text-align: center;
 }
 
+h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 16px;
+}
+
 .buttonclass{
   display: inline-block;
   justify-content: center;
