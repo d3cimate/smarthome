@@ -32,22 +32,10 @@ const analytics = getAnalytics(app);
 
 const db = getFirestore(app);
 
-async function getCities(db) {
+async function getCities(db) 
+{
     const roomsCol = collection(db, 'rooms');
     const roomSnapshot = await getDocs(roomsCol);
     const roomList = roomSnapshot.docs.map(doc => doc.data());
     return roomList;
   }
-  
-
-// const database = firebase.firestore();
-
-// const docRef = doc(db, "cities", "SF");
-// const docSnap = await getDoc(docRef);
-
-// if (docSnap.exists()) {
-//   console.log("Document data:", docSnap.data());
-// } else {
-//   // docSnap.data() will be undefined in this case
-//   console.log("No such document!");
-// }
