@@ -2,7 +2,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebas
 
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-analytics.js";
 
-import { doc, getDoc } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore.js";
+import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore.js";
 
 const firebaseConfig = 
 {
@@ -30,14 +30,24 @@ const app = initializeApp(firebaseConfig);
 
 const analytics = getAnalytics(app);
 
-const database = firebase.firestore();
+const db = getFirestore(app);
 
-const docRef = doc(db, "cities", "SF");
-const docSnap = await getDoc(docRef);
+async function getCities(db) {
+    const roomsCol = collection(db, 'rooms');
+    const roomSnapshot = await getDocs(roomsCol);
+    const roomList = roomSnapshot.docs.map(doc => doc.data());
+    return roomList;
+  }
+  
 
-if (docSnap.exists()) {
-  console.log("Document data:", docSnap.data());
-} else {
-  // docSnap.data() will be undefined in this case
-  console.log("No such document!");
-}
+// const database = firebase.firestore();
+
+// const docRef = doc(db, "cities", "SF");
+// const docSnap = await getDoc(docRef);
+
+// if (docSnap.exists()) {
+//   console.log("Document data:", docSnap.data());
+// } else {
+//   // docSnap.data() will be undefined in this case
+//   console.log("No such document!");
+// }
