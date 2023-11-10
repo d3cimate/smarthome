@@ -138,26 +138,49 @@ async function getLivingRoomMotion()
 
 async function getTempHum(roomNum)
 {
-  if(roomNum == 1)
-  {
-    document.body.innerHTML = getRoom1Temp();
-    document.body.innerHTML = getRoom1Hum();
-    window.print();
-  }
+  // if(roomNum == 1)
+  // {
+  //   document.body.innerHTML = getRoom1Temp();
+  //   document.body.innerHTML = getRoom1Hum();
+  //   window.print();
+  // }
   
-  else if(roomNum == 2)
-  {
-    document.body.innerHTML = getRoom2Temp();
-    document.body.innerHTML = getRoom2Hum();
-    window.print();
-  }
+  // else if(roomNum == 2)
+  // {
+  //   document.body.innerHTML = getRoom2Temp();
+  //   document.body.innerHTML = getRoom2Hum();
+  //   window.print();
+  // }
   
-  else if(roomNum == 3)
+  // else if(roomNum == 3)
+  // {
+  //   document.body.innerHTML = getLivingRoomTemp1();
+  //   document.body.innerHTML = getLivingRoomTemp2();
+  //   document.body.innerHTML = getLivingRoomHum1();
+  //   document.body.innerHTML = getLivingRoomHum2();
+  //   window.print();
+  // }
+  try 
   {
-    document.body.innerHTML = getLivingRoomTemp1();
-    document.body.innerHTML = getLivingRoomTemp2();
-    document.body.innerHTML = getLivingRoomHum1();
-    document.body.innerHTML = getLivingRoomHum2();
+    let temperature, humidity;
+
+    if (roomNum == 1) {
+      temperature = await getRoom1Temp();
+      humidity = await getRoom1Hum();
+    } else if (roomNum == 2) {
+      temperature = await getRoom2Temp();
+      humidity = await getRoom2Hum();
+    } else if (roomNum == 3) {
+      temperature = await getLivingRoomTemp1();
+      humidity = await getLivingRoomHum1();
+    }
+
+    // Display the temperature and humidity on the page
+    document.body.innerHTML = `Temperature: ${temperature}, Humidity: ${humidity}`;
     window.print();
+  } 
+  catch (error) 
+  {
+    console.error("Error fetching temperature and humidity:", error);
   }
 }
