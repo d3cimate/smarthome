@@ -25,6 +25,10 @@ querySnapshot.forEach((doc) => {
   console.log(`${doc.id} => ${doc.data()}`);
 });
 
+const docRef = doc(db, "rooms", "Jdc3dSZ1AhHRGVIfzbyr");
+const docSnap = await getDoc(docRef);
+console.log("Document data: ", docSnap.data());
+
 // async function getRooms(db) 
 // {
 //   const roomsCol = collection(db, 'rooms');
