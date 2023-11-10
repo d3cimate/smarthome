@@ -25,9 +25,21 @@ querySnapshot.forEach((doc) => {
   console.log(`${doc.id} => ${doc.data()}`);
 });
 
-const docRef = doc(db, "rooms", "Jdc3dSZ1AhHRGVIfzbyr");
-const docSnap = await getDoc(docRef);
-console.log("Document data: ", docSnap.data());
+const room1Data = doc(db, "rooms", "Jdc3dSZ1AhHRGVIfzbyr");
+const room1Snap = await getDoc(room1Data);
+console.log("Bedroom 1 data: ", room1Snap.data());
+
+const room2Data = doc(db, "rooms", "pCFnQGYwz7o896ExOp3X");
+const room2Snap = await getDoc(room2Data);
+console.log("Bedroom 2 data: ", room2Snap.data());
+
+const roomData = doc(db, "rooms", "wP1vfNSNrzbuVkgWpGZV");
+const roomSnap = await getDoc(roomData);
+console.log("Living Room data: ", roomSnap.data());
+
+const rulesData = doc(db, "automationrules", "QMmCsnunrXfwXeQH1svW");
+const rulesSnap = await getDoc(rulesData);
+console.log("Automation Rules: ", rulesSnap.data());
 
 // async function getRooms(db) 
 // {
