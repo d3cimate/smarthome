@@ -55,18 +55,103 @@ console.log("Living Room Motion Sensor: ", roomSnap.data().motion);
 // const rulesSnap = await getDoc(rulesData);
 // console.log("Automation Rules: ", rulesSnap.data());
 
-const user1Data = doc(db, "automationrules", "QMmCsnunrXfwXeQH1svW");
+const user1Data = doc(db, "userpreferences", "3NyZsZpdckMgcLCF2Z3Z");
 const user1Snap = await getDoc(user1Data);
 console.log("User Preferences 1: ", user1Snap.data());
 
-const user2Data = doc(db, "automationrules", "QMmCsnunrXfwXeQH1svW");
+const user2Data = doc(db, "userpreferences", "RF8xj8x2bOVwBBO22VhA");
 const user2Snap = await getDoc(user2Data);
 console.log("User Preferences 2: ", user2Snap.data());
 
-// async function getRooms(db) 
-// {
-//   const roomsCol = collection(db, 'rooms');
-//   const roomSnapshot = await getDocs(roomsCol);
-//   const roomList = roomSnapshot.docs.map(doc => doc.data());
-//   return roomList;
-// }
+async function getRoom1Temp()
+{
+  return room1Snap.data().temperature;
+}
+
+async function getRoom1Hum()
+{
+  return room1Snap.data().humidity;
+}
+
+async function getRoom1Ultrasonic()
+{
+  return room1Snap.data().ultrasonic;
+}
+
+async function getRoom1Motion()
+{
+  return room1Snap.data().motion;
+}
+
+async function getRoom2Temp()
+{
+  return room2Snap.data().temperature;
+}
+
+async function getRoom2Hum()
+{
+  return room2Snap.data().humidity;
+}
+
+async function getRoom2Ultrasonic()
+{
+  return room2Snap.data().ultrasonic;
+}
+
+async function getRoom2Motion()
+{
+  return room2Snap.data().motion;
+}
+
+async function getLivingRoomTemp1()
+{
+  return roomSnap.data().temperature1;
+}
+
+async function getLivingRoomTemp2()
+{
+  return roomSnap.data().temperature2;
+}
+
+async function getLivingRoomHum1()
+{
+  return roomSnap.data().humidity1;
+}
+
+async function getLivingRoomHum2()
+{
+  return roomSnap.data().humidity2;
+}
+
+async function getLivingRoomUltrasonic()
+{
+  return roomSnap.data().ultrasonic;
+}
+
+async function getLivingRoomMotion()
+{
+  return roomSnap.data().motion;
+}
+
+async function getTempHum(roomNum)
+{
+  if(roomNum == 1)
+  {
+    document.body.innerHTML = getRoom1Temp();
+    document.body.innerHTML = getRoom1Hum();
+  }
+  
+  else if(roomNum == 2)
+  {
+    document.body.innerHTML = getRoom2Temp();
+    document.body.innerHTML = getRoom2Hum();
+  }
+  
+  else if(roomNum == 3)
+  {
+    document.body.innerHTML = getLivingRoomTemp1();
+    document.body.innerHTML = getLivingRoomTemp2();
+    document.body.innerHTML = getLivingRoomHum1();
+    document.body.innerHTML = getLivingRoomHum2();
+  }
+}
