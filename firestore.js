@@ -28,6 +28,7 @@ querySnapshot.forEach((doc) => {
 const room1Data = doc(db, "rooms", "Jdc3dSZ1AhHRGVIfzbyr");
 const room1Snap = await getDoc(room1Data);
 console.log("Bedroom 1 data: ", room1Snap.data());
+console.log("Bedroom 1 Temperature: ", room1Snap.data().temperature);
 
 const room2Data = doc(db, "rooms", "pCFnQGYwz7o896ExOp3X");
 const room2Snap = await getDoc(room2Data);
