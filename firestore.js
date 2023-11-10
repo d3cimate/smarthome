@@ -37,9 +37,20 @@ const roomData = doc(db, "rooms", "wP1vfNSNrzbuVkgWpGZV");
 const roomSnap = await getDoc(roomData);
 console.log("Living Room data: ", roomSnap.data());
 
-const rulesData = doc(db, "automationrules", "QMmCsnunrXfwXeQH1svW");
-const rulesSnap = await getDoc(rulesData);
-console.log("Automation Rules: ", rulesSnap.data());
+// const rulesData = doc(db, "automationrules", "QMmCsnunrXfwXeQH1svW");
+// const rulesSnap = await getDoc(rulesData);
+// console.log("Automation Rules: ", rulesSnap.data());
+
+const user1Data = doc(db, "automationrules", "QMmCsnunrXfwXeQH1svW");
+const user1Snap = await getDoc(user1Data);
+console.log("User Preferences 1: ", user1Snap.data());
+
+const user2Data = doc(db, "automationrules", "QMmCsnunrXfwXeQH1svW");
+const user2Snap = await getDoc(user2Data);
+console.log("User Preferences 2: ", user2Snap.data());
+
+const room1Field = await room1Data.temperature;
+console.log("Bedroom 1 Temperature: ", room1Field);
 
 // async function getRooms(db) 
 // {
