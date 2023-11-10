@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-analytics.js";
-import { getFirestore, doc, getDocs, getDoc } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore.js";
+import { collection, getFirestore, doc, getDocs, getDoc } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore.js";
 
 const firebaseConfig = 
 {
@@ -25,10 +25,10 @@ querySnapshot.forEach((doc) => {
   console.log(`${doc.id} => ${doc.data()}`);
 });
 
-async function getRooms(db) 
-{
-  const roomsCol = collection(db, 'rooms');
-  const roomSnapshot = await getDocs(roomsCol);
-  const roomList = roomSnapshot.docs.map(doc => doc.data());
-  return roomList;
-}
+// async function getRooms(db) 
+// {
+//   const roomsCol = collection(db, 'rooms');
+//   const roomSnapshot = await getDocs(roomsCol);
+//   const roomList = roomSnapshot.docs.map(doc => doc.data());
+//   return roomList;
+// }
