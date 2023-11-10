@@ -29,14 +29,27 @@ const room1Data = doc(db, "rooms", "Jdc3dSZ1AhHRGVIfzbyr");
 const room1Snap = await getDoc(room1Data);
 console.log("Bedroom 1 data: ", room1Snap.data());
 console.log("Bedroom 1 Temperature: ", room1Snap.data().temperature);
+console.log("Bedroom 1 Humidity: ", room1Snap.data().humidity);
+console.log("Bedroom 1 Ultrasonic Sensor: ", room1Snap.data().ultrasonic);
+console.log("Bedroom 1 Motion Sensor: ", room1Snap.data().motion);
 
 const room2Data = doc(db, "rooms", "pCFnQGYwz7o896ExOp3X");
 const room2Snap = await getDoc(room2Data);
 console.log("Bedroom 2 data: ", room2Snap.data());
+console.log("Bedroom 2 Temperature: ", room2Snap.data().temperature);
+console.log("Bedroom 2 Humidity: ", room2Snap.data().humidity);
+console.log("Bedroom 2 Ultrasonic Sensor: ", room2Snap.data().ultrasonic);
+console.log("Bedroom 2 Motion Sensor: ", room2Snap.data().motion);
 
 const roomData = doc(db, "rooms", "wP1vfNSNrzbuVkgWpGZV");
 const roomSnap = await getDoc(roomData);
 console.log("Living Room data: ", roomSnap.data());
+console.log("Living Room Temperature 1: ", roomSnap.data().temperature1);
+console.log("Living Room Temperature 2: ", roomSnap.data().temperature2);
+console.log("Living Room Humidity 1: ", roomSnap.data().humidity1);
+console.log("Living Room Humidity 2: ", roomSnap.data().humidity2);
+console.log("Living Room Ultrasonic Sensor: ", roomSnap.data().ultrasonic);
+console.log("Living Room Motion Sensor: ", roomSnap.data().motion);
 
 // const rulesData = doc(db, "automationrules", "QMmCsnunrXfwXeQH1svW");
 // const rulesSnap = await getDoc(rulesData);
@@ -49,9 +62,6 @@ console.log("User Preferences 1: ", user1Snap.data());
 const user2Data = doc(db, "automationrules", "QMmCsnunrXfwXeQH1svW");
 const user2Snap = await getDoc(user2Data);
 console.log("User Preferences 2: ", user2Snap.data());
-
-const room1Field = doc(db, "rooms", "Jdc3dSZ1AhHRGVIfzbyr").data().temperature;
-console.log("Bedroom 1 Temperature: ", room1Field);
 
 // async function getRooms(db) 
 // {
