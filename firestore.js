@@ -133,18 +133,23 @@ async function getLivingRoomMotion()
   return roomSnap.data().motion;
 }
 
+// var button = document.getElementById("check");
+// button.addEventListener("click", getTempHum);
+
 async function getTempHum(roomNum)
 {
   if(roomNum == 1)
   {
     document.body.innerHTML = getRoom1Temp();
     document.body.innerHTML = getRoom1Hum();
+    window.print();
   }
   
   else if(roomNum == 2)
   {
     document.body.innerHTML = getRoom2Temp();
     document.body.innerHTML = getRoom2Hum();
+    window.print();
   }
   
   else if(roomNum == 3)
@@ -153,5 +158,6 @@ async function getTempHum(roomNum)
     document.body.innerHTML = getLivingRoomTemp2();
     document.body.innerHTML = getLivingRoomHum1();
     document.body.innerHTML = getLivingRoomHum2();
+    window.print();
   }
 }
