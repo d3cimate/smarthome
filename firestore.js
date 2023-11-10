@@ -49,7 +49,7 @@ const user2Data = doc(db, "automationrules", "QMmCsnunrXfwXeQH1svW");
 const user2Snap = await getDoc(user2Data);
 console.log("User Preferences 2: ", user2Snap.data());
 
-const room1Field = await room1Data.temperature;
+const room1Field = await room1Data.data().temperature;
 console.log("Bedroom 1 Temperature: ", room1Field);
 
 // async function getRooms(db) 
