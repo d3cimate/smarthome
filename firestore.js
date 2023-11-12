@@ -2,6 +2,30 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebas
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-analytics.js";
 import { collection, getFirestore, doc, getDocs, getDoc } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore.js";
 
+window.getTempHum = async function (roomNum) 
+{
+    try {
+        let temperature, humidity;
+
+        if (roomNum == 1) {
+            temperature = await getRoom1Temp();
+            humidity = await getRoom1Hum();
+        } else if (roomNum == 2) {
+            temperature = await getRoom2Temp();
+            humidity = await getRoom2Hum();
+        } else if (roomNum == 3) {
+            temperature = await getLivingRoomTemp1();
+            humidity = await getLivingRoomHum1();
+        }
+
+        // Display the temperature and humidity on the page
+        document.getElementById('temperature').textContent = `Temperature: ${temperature}°C`;
+        document.getElementById('humidity').textContent = `Humidity: ${humidity}%`;
+    } catch (error) {
+        console.error("Error fetching temperature and humidity:", error);
+    }
+};
+
 const firebaseConfig = 
 {
   apiKey: "AIzaSyDODmshZ0BlzKFnHNIHj04ONoiPcobs-zI",
@@ -189,27 +213,3 @@ async function getLivingRoomMotion()
 //     console.error("Error fetching temperature and humidity:", error);
 //   }
 // }
-
-window.getTempHum = async function (roomNum) 
-{
-    try {
-        let temperature, humidity;
-
-        if (roomNum == 1) {
-            temperature = await getRoom1Temp();
-            humidity = await getRoom1Hum();
-        } else if (roomNum == 2) {
-            temperature = await getRoom2Temp();
-            humidity = await getRoom2Hum();
-        } else if (roomNum == 3) {
-            temperature = await getLivingRoomTemp1();
-            humidity = await getLivingRoomHum1();
-        }
-
-        // Display the temperature and humidity on the page
-        document.getElementById('temperature').textContent = `Temperature: ${temperature}°C`;
-        document.getElementById('humidity').textContent = `Humidity: ${humidity}%`;
-    } catch (error) {
-        console.error("Error fetching temperature and humidity:", error);
-    }
-};
