@@ -208,6 +208,7 @@ document.getElementById('check').addEventListener('click', function()
             {
                 document.getElementById('temperature').textContent = doc.data().temperature;
                 document.getElementById('humidity').textContent = doc.data().humidity;
+                console.log("Document data:", doc.data());
             } else {
                 console.log("No such document!");
             }
