@@ -45,10 +45,10 @@ window.getTempHum = async function (roomNum)
             document.getElementById('temperature').textContent = `Bedroom 2: Temperature: ${temperature}°C`;
             document.getElementById('humidity').textContent = `Humidity: ${humidity}%`;
         }
-        else
-        {
-            window.alert("Error! Invalid Room Number!");
-        }
+        // else
+        // {
+        //     window.alert("Error! Invalid Room Number!");
+        // }
     } 
     catch (error) 
     {
