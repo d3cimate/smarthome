@@ -29,14 +29,19 @@ window.getTempHum = async function (roomNum)
             document.getElementById('temperature').textContent = `Living Room\nTemperature 1: ${temperature1}°C, Temperature 2: ${temperature2}°C`;
             document.getElementById('humidity').textContent = `Humidity 1: ${humidity1}%, Humidity 2: ${humidity2}%`;
         }
-        else if(roomNum == 1)
+        // else if(roomNum == 1)
+        // {
+        //     document.getElementById('temperature').textContent = `Bedroom 1\nTemperature: ${temperature}°C`;
+        //     document.getElementById('humidity').textContent = `Humidity: ${humidity}%`;
+        // }
+        // else if(roomNum == 2)
+        // {
+        //     document.getElementById('temperature').textContent = `Bedroom 2\nTemperature: ${temperature}°C`;
+        //     document.getElementById('humidity').textContent = `Humidity: ${humidity}%`;
+        // }
+        else
         {
             document.getElementById('temperature').textContent = `Bedroom 1\nTemperature: ${temperature}°C`;
-            document.getElementById('humidity').textContent = `Humidity: ${humidity}%`;
-        }
-        else if(roomNum == 2)
-        {
-            document.getElementById('temperature').textContent = `Bedroom 2\nTemperature: ${temperature}°C`;
             document.getElementById('humidity').textContent = `Humidity: ${humidity}%`;
         }
     } 
@@ -64,10 +69,10 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const db = getFirestore(app);
 
-const querySnapshot = await getDocs(collection(db, "rooms"));
-querySnapshot.forEach((doc) => {
-  console.log(`${doc.id} => ${doc.data()}`);
-});
+// const querySnapshot = await getDocs(collection(db, "rooms"));
+// querySnapshot.forEach((doc) => {
+//   console.log(`${doc.id} => ${doc.data()}`);
+// });
 
 const room1Data = doc(db, "rooms", "Jdc3dSZ1AhHRGVIfzbyr");
 const room1Snap = await getDoc(room1Data);
