@@ -4,24 +4,41 @@ import { collection, getFirestore, doc, getDocs, getDoc } from "https://www.gsta
 
 window.getTempHum = async function (roomNum) 
 {
-    try {
-        let temperature, humidity;
+    try 
+    {
+        let temperature, temperature1, temperature2, humidity, humidity1, humidity2;
 
-        if (roomNum == 1) {
+        if (roomNum == 1) 
+        {
             temperature = await getRoom1Temp();
             humidity = await getRoom1Hum();
-        } else if (roomNum == 2) {
+        } else if (roomNum == 2) 
+        {
             temperature = await getRoom2Temp();
             humidity = await getRoom2Hum();
-        } else if (roomNum == 3) {
-            temperature = await getLivingRoomTemp1();
-            humidity = await getLivingRoomHum1();
+        } else if (roomNum == 3) 
+        {
+            temperature1 = await getLivingRoomTemp1();
+            temperature2 = await getLivingRoomTemp2();
+            humidity1 = await getLivingRoomHum1();
+            humidity2 = await getLivingRoomHum2();
         }
-
-        // Display the temperature and humidity on the page
-        document.getElementById('temperature').textContent = `Temperature: ${temperature}`;
-        document.getElementById('humidity').textContent = `Humidity: ${humidity}`;
-    } catch (error) {
+        
+        if(roomNum == 3)
+        {
+            document.body.innerHTML = `Temperature 1: ${temperature1}, Temperature 2: ${temperature2}, Humidity 1: ${humidity1}, Humidity 2: ${humidity2}`;
+            window.print();
+            // document.getElementById('temperature').textContent = `Temperature: ${temperature}`;
+            // document.getElementById('humidity').textContent = `Humidity: ${humidity}`;
+        }
+        else
+        {
+            document.getElementById('temperature').textContent = `Temperature: ${temperature}`;
+            document.getElementById('humidity').textContent = `Humidity: ${humidity}`;
+        }
+    } 
+    catch (error) 
+    {
         console.error("Error fetching temperature and humidity:", error);
     }
 };
