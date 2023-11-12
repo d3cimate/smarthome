@@ -19,6 +19,12 @@
         <script type = "text/javascript" src="firestore.js"></script>  
         <button id = "check" class="button"> Check Temperature and Humidity </button>
         <!-- onclick = "getTempHum(document.getElementById('roomnum').value)" -->
+
+        <div id="result">
+            <p>Temperature: <span id="temperature"></span>°C</p>
+            <p>Humidity: <span id="humidity"></span>%</p>
+        </div>
+
         <button class="button button2" onclick = "window.location.href='#';"> Control AC </button>
         <button class="button button3" onclick = "window.location.href='index.html';"> Main Menu </button>
     </div>
