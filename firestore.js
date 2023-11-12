@@ -189,3 +189,10 @@ async function getTempHum(roomNum)
     console.error("Error fetching temperature and humidity:", error);
   }
 }
+
+window.onload = function()
+{
+    var btn = document.getElementById("check");
+    var roomNum = document.getElementById("roomnum").value;
+    btn.onclick = getTempHum(roomNum);
+}
