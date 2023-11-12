@@ -28,12 +28,17 @@ window.getTempHum = async function (roomNum)
         {
             // document.body.innerHTML = `Temperature 1: ${temperature1}, Temperature 2: ${temperature2}, Humidity 1: ${humidity1}, Humidity 2: ${humidity2}`;
             // window.print();
-            document.getElementById('temperature').textContent = `Temperature 1: ${temperature1}°C, Temperature 2: ${temperature2}°C`;
+            document.getElementById('temperature').textContent = `Living Room\nTemperature 1: ${temperature1}°C, Temperature 2: ${temperature2}°C`;
             document.getElementById('humidity').textContent = `Humidity 1: ${humidity1}%, Humidity 2: ${humidity2}%`;
         }
-        else
+        else if(roomNum == 1)
         {
-            document.getElementById('temperature').textContent = `Temperature: ${temperature}°C`;
+            document.getElementById('temperature').textContent = `Bedroom 1\nTemperature: ${temperature}°C`;
+            document.getElementById('humidity').textContent = `Humidity: ${humidity}%`;
+        }
+        else if(roomNum == 2)
+        {
+            document.getElementById('temperature').textContent = `Bedroom 2\nTemperature: ${temperature}°C`;
             document.getElementById('humidity').textContent = `Humidity: ${humidity}%`;
         }
     } 
