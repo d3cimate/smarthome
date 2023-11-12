@@ -200,6 +200,7 @@ async function getTempHum(roomNum)
 document.getElementById('check').addEventListener('click', function() 
 {
     const roomId = document.getElementById('roomnum').value;
+    console.log("Button clicked, Room ID: ", roomId);
     if(roomId) 
     {
         db.collection('rooms').doc(roomId).get().then((doc) => 
