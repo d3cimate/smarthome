@@ -196,3 +196,23 @@ async function getTempHum(roomNum)
 //     var roomNum = document.getElementById("roomnum").value;
 //     btn.onclick = getTempHum(roomNum);
 // }
+
+document.getElementById('check').addEventListener('click', function() 
+{
+    const roomId = document.getElementById('roomnum').value;
+    if(roomId) 
+    {
+        db.collection('rooms').doc(roomId).get().then((doc) => 
+        {
+            if(doc.exists) 
+            {
+                document.getElementById('temperature').textContent = doc.data().temperature;
+                document.getElementById('humidity').textContent = doc.data().humidity;
+            } else {
+                console.log("No such document!");
+            }
+        }).catch((error) => {
+            console.log("Error getting document:", error);
+        });
+    }
+});
