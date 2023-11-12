@@ -4,12 +4,12 @@ import { collection, getFirestore, doc, getDocs, getDoc } from "https://www.gsta
 
 window.lockDoor = async function (doornum)
 {
-
+    window.alert(`Door ${doornum} Locked`);
 }
 
 window.unlockDoor = async function (doornum)
 {
-    
+    window.alert(`Door ${doornum} Unlocked`);
 }
 
 window.getTempHum = async function (roomNum) 
