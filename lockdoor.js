@@ -1,4 +1,7 @@
 window.lockDoor = async function (doornum)
 {
-    window.alert(`Door ${doornum} Locked`);
+    if(doornum > 3)
+        window.alert(`Invalid Door Number`);
+    else
+        window.alert(`Door ${doornum} Locked`);
 }
