@@ -1,15 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Door Lock</title>
   <link rel="stylesheet" href="style.css">
-  <!-- <script src="https://unpkg.com/akar-icons-fonts"></script>
-  <script src="https://unpkg.com/feather-icons"></script> -->
+  <script type="module" src="firestore.js"></script>  
 </head>
-
 <body>
     <main id="main" class="flexbox-col">
         <h1>Door Locks</h1>
@@ -17,11 +14,10 @@
         <input type="text" id="doornum" name="doornum"><br><br>
     </main>
     <div class="buttonclass">
-        <button class="button" onclick = "window.location.href='#';"> Lock Door </button>
-        <button class="button" onclick = "window.location.href='#';"> Unlock Door </button>
+        <button class="button" onclick = "window.lockDoor(document.getElementById('doornum').value)"> Lock Door </button>
+        <button class="button" onclick = "window.unlockDoor(document.getElementById('doornum').value)"> Unlock Door </button>
         <button class="button button2" onclick = "window.location.href='#';"> View Door Numbers </button>
         <button class="button button3" onclick = "window.location.href='index.html';"> Main Menu </button>
     </div>
 </body>
-
 </html>
