@@ -136,8 +136,8 @@ async function getLivingRoomMotion()
 // var button = document.getElementById("check");
 // button.addEventListener("click", getTempHum);
 
-async function getTempHum(roomNum)
-{
+// async function getTempHum(roomNum)
+// {
   // if(roomNum == 1)
   // {
   //   document.body.innerHTML = getRoom1Temp();
@@ -160,46 +160,56 @@ async function getTempHum(roomNum)
   //   document.body.innerHTML = getLivingRoomHum2();
   //   window.print();
   // }
-  try 
-  {
-    let temperature, humidity;
+//   try 
+//   {
+//     let temperature, humidity;
 
-    if (roomNum == 1) 
-    {
-      temperature = await getRoom1Temp();
-      humidity = await getRoom1Hum();
-    } 
-    else if (roomNum == 2) 
-    {
-      temperature = await getRoom2Temp();
-      humidity = await getRoom2Hum();
-    } 
-    else if (roomNum == 3) 
-    {
-      temperature = await getLivingRoomTemp1();
-      humidity = await getLivingRoomHum1();
-    }
+//     if (roomNum == 1) 
+//     {
+//       temperature = await getRoom1Temp();
+//       humidity = await getRoom1Hum();
+//     } 
+//     else if (roomNum == 2) 
+//     {
+//       temperature = await getRoom2Temp();
+//       humidity = await getRoom2Hum();
+//     } 
+//     else if (roomNum == 3) 
+//     {
+//       temperature = await getLivingRoomTemp1();
+//       humidity = await getLivingRoomHum1();
+//     }
 
-    // Display the temperature and humidity on the page
-    document.body.innerHTML = `Temperature: ${temperature}, Humidity: ${humidity}`;
-    window.print();
-  } 
-  catch (error) 
-  {
-    console.error("Error fetching temperature and humidity:", error);
-  }
-}
-
-// window.onload = function()
-// {
-//     var btn = document.getElementById("check");
-//     var roomNum = document.getElementById("roomnum").value;
-//     btn.onclick = getTempHum(roomNum);
+//     // Display the temperature and humidity on the page
+//     document.body.innerHTML = `Temperature: ${temperature}, Humidity: ${humidity}`;
+//     window.print();
+//   } 
+//   catch (error) 
+//   {
+//     console.error("Error fetching temperature and humidity:", error);
+//   }
 // }
 
-document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('check').addEventListener('click', async () => {
-        const roomNum = document.getElementById('roomnum').value;
-        await getTempHum(roomNum);
-    });
-});
+window.getTempHum = async function (roomNum) 
+{
+    try {
+        let temperature, humidity;
+
+        if (roomNum == 1) {
+            temperature = await getRoom1Temp();
+            humidity = await getRoom1Hum();
+        } else if (roomNum == 2) {
+            temperature = await getRoom2Temp();
+            humidity = await getRoom2Hum();
+        } else if (roomNum == 3) {
+            temperature = await getLivingRoomTemp1();
+            humidity = await getLivingRoomHum1();
+        }
+
+        // Display the temperature and humidity on the page
+        document.getElementById('temperature').textContent = `Temperature: ${temperature}°C`;
+        document.getElementById('humidity').textContent = `Humidity: ${humidity}%`;
+    } catch (error) {
+        console.error("Error fetching temperature and humidity:", error);
+    }
+};
