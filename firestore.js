@@ -190,9 +190,9 @@ async function getTempHum(roomNum)
   }
 }
 
-window.onload = function()
-{
-    var btn = document.getElementById("check");
-    var roomNum = document.getElementById("roomnum").value;
-    btn.onclick = getTempHum(roomNum);
-}
+// window.onload = function()
+// {
+//     var btn = document.getElementById("check");
+//     var roomNum = document.getElementById("roomnum").value;
+//     btn.onclick = getTempHum(roomNum);
+// }
