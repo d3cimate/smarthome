@@ -164,13 +164,18 @@ async function getTempHum(roomNum)
   {
     let temperature, humidity;
 
-    if (roomNum == 1) {
+    if (roomNum == 1) 
+    {
       temperature = await getRoom1Temp();
       humidity = await getRoom1Hum();
-    } else if (roomNum == 2) {
+    } 
+    else if (roomNum == 2) 
+    {
       temperature = await getRoom2Temp();
       humidity = await getRoom2Hum();
-    } else if (roomNum == 3) {
+    } 
+    else if (roomNum == 3) 
+    {
       temperature = await getLivingRoomTemp1();
       humidity = await getLivingRoomHum1();
     }
