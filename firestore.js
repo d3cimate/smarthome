@@ -19,8 +19,8 @@ window.getTempHum = async function (roomNum)
         }
 
         // Display the temperature and humidity on the page
-        document.getElementById('temperature').textContent = `Temperature: ${temperature}°C`;
-        document.getElementById('humidity').textContent = `Humidity: ${humidity}%`;
+        document.getElementById('temperature').textContent = `Temperature: ${temperature}`;
+        document.getElementById('humidity').textContent = `Humidity: ${humidity}`;
     } catch (error) {
         console.error("Error fetching temperature and humidity:", error);
     }
