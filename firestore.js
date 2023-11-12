@@ -199,6 +199,7 @@ async function getTempHum(roomNum)
 
 document.getElementById('check').addEventListener('click', function() 
 {
+    console.log("nigger");
     const roomId = document.getElementById('roomnum').value;
     console.log("Button clicked, Room ID: ", roomId);
     if(roomId) 
