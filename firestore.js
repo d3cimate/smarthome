@@ -26,8 +26,6 @@ window.getTempHum = async function (roomNum)
         
         if(roomNum == 3)
         {
-            // document.body.innerHTML = `Temperature 1: ${temperature1}, Temperature 2: ${temperature2}, Humidity 1: ${humidity1}, Humidity 2: ${humidity2}`;
-            // window.print();
             document.getElementById('temperature').textContent = `Living Room\nTemperature 1: ${temperature1}°C, Temperature 2: ${temperature2}°C`;
             document.getElementById('humidity').textContent = `Humidity 1: ${humidity1}%, Humidity 2: ${humidity2}%`;
         }
