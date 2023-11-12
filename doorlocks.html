@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css">
   <script type="module" src="lockdoor.js"></script>  
   <script type="module" src="unlockdoor.js"></script>  
+  <script type="module" src="viewdoors.js"></script>
 </head>
 <body>
     <main id="main" class="flexbox-col">
@@ -17,7 +18,10 @@
     <div class="buttonclass">
         <button id="lock" class="button" onclick = "window.lockDoor(document.getElementById('doornum').value)"> Lock Door </button>
         <button id="unlock" class="button" onclick = "window.unlockDoor(document.getElementById('doornum').value)"> Unlock Door </button>
-        <button class="button button2" onclick = "window.location.href='#';"> View Door Numbers </button>
+        <button class="button button2" onclick = "window.viewDoors()"> View Door Numbers </button>
+        <div id="doors">
+            <p><span id="doors"></span></p>
+        </div>
         <button class="button button3" onclick = "window.location.href='index.html';"> Main Menu </button>
     </div>
 </body>
