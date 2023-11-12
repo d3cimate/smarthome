@@ -2,16 +2,6 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebas
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-analytics.js";
 import { collection, getFirestore, doc, getDocs, getDoc } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore.js";
 
-window.lockDoor = async function (doornum)
-{
-    window.alert(`Door ${doornum} Locked`);
-}
-
-window.unlockDoor = async function (doornum)
-{
-    window.alert(`Door ${doornum} Unlocked`);
-}
-
 window.getTempHum = async function (roomNum) 
 {
     try 
