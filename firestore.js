@@ -12,16 +12,22 @@ window.getTempHum = async function (roomNum)
         {
             temperature = await getRoom1Temp();
             humidity = await getRoom1Hum();
-        } else if (roomNum == 2) 
+        } 
+        else if (roomNum == 2) 
         {
             temperature = await getRoom2Temp();
             humidity = await getRoom2Hum();
-        } else if (roomNum == 3) 
+        } 
+        else if (roomNum == 3) 
         {
             temperature1 = await getLivingRoomTemp1();
             temperature2 = await getLivingRoomTemp2();
             humidity1 = await getLivingRoomHum1();
             humidity2 = await getLivingRoomHum2();
+        }
+        else
+        {
+            window.alert("Error! Invalid Room Number!");
         }
         
         if(roomNum == 3)
@@ -41,7 +47,7 @@ window.getTempHum = async function (roomNum)
         }
         else
         {
-            document.getElementById('temperature').textContent = `Error! Invalid Room Number!`;
+            window.alert("Error! Invalid Room Number!");
         }
     } 
     catch (error) 
