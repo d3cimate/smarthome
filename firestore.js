@@ -197,25 +197,28 @@ async function getTempHum(roomNum)
 //     btn.onclick = getTempHum(roomNum);
 // }
 
-document.getElementById('check').addEventListener('click', function() 
-{
-    console.log("nigger");
-    const roomId = document.getElementById('roomnum').value;
-    console.log("Button clicked, Room ID: ", roomId);
-    if(roomId) 
-    {
-        db.collection('rooms').doc(roomId).get().then((doc) => 
-        {
-            if(doc.exists) 
-            {
-                document.getElementById('temperature').textContent = doc.data().temperature;
-                document.getElementById('humidity').textContent = doc.data().humidity;
-                console.log("Document data:", doc.data());
-            } else {
-                console.log("No such document!");
-            }
-        }).catch((error) => {
-            console.log("Error getting document:", error);
-        });
-    }
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize Firebase
+    // firebase.initializeApp(yourFirebaseConfig);
+    const db = firebase.firestore();
+
+    document.getElementById('check').addEventListener('click', function() {
+        const roomId = document.getElementById('roomnum').value;
+        if(roomId) {
+            db.collection('rooms').doc(roomId).get().then((doc) => {
+                if(doc.exists) {
+                    document.getElementById('temperature').textContent = doc.data().temperature;
+                    document.getElementById('humidity').textContent = doc.data().humidity;
+                } else {
+                    console.log("No such document!");
+                }
+            }).catch((error) => {
+                console.log("Error getting document:", error);
+            });
+        } else {
+            console.log("Room ID is required");
+        }
+    });
+
+
 });

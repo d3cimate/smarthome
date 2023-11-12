@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>House Temperature</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
     <main id="main" class="flexbox-col">
         <h1>House Temperature and Humidity</h1>
@@ -15,19 +13,14 @@
         <input type="text" id="roomnum" name="roomnum"><br><br>
     </main>
     <div class="buttonclass">
-        <!-- <button class="button" onclick = "window.location.href='lockdoor.html';"> Lock Door </button> -->
-        <script type = "text/javascript" src="firestore.js"></script>  
-        <button id = "check" class="button"> Check Temperature and Humidity </button>
-        <!-- onclick = "getTempHum(document.getElementById('roomnum').value)" -->
-
+        <button id="check" class="button">Check Temperature and Humidity</button>
         <div id="result">
             <p>Temperature: <span id="temperature"></span>°C</p>
             <p>Humidity: <span id="humidity"></span>%</p>
         </div>
-
-        <button class="button button2" onclick = "window.location.href='#';"> Control AC </button>
-        <button class="button button3" onclick = "window.location.href='index.html';"> Main Menu </button>
+        <button class="button button2" onclick="window.location.href='#';">Control AC</button>
+        <button class="button button3" onclick="window.location.href='index.html';">Main Menu</button>
     </div>
+    <script type="text/javascript" src="firestore.js"></script>  
 </body>
-
 </html>
