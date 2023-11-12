@@ -197,32 +197,31 @@ async function getTempHum(roomNum)
 //     btn.onclick = getTempHum(roomNum);
 // }
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Initialize Firebase
-    // firebase.initializeApp(yourFirebaseConfig);
+// document.addEventListener('DOMContentLoaded', () => {
+//     // Initialize Firebase
+//     // firebase.initializeApp(yourFirebaseConfig);
 
-    document.getElementById('check').addEventListener('click', function() {
-        const roomIdInput = document.getElementById('roomnum').value;
-        const roomId = parseInt(roomIdInput); // Convert input to a number if room_id is stored as a number
+//     document.getElementById('check').addEventListener('click', function() {
+//         const roomIdInput = document.getElementById('roomnum').value;
+//         const roomId = parseInt(roomIdInput); // Convert input to a number if room_id is stored as a number
 
-        if (roomIdInput) {
-            db.collection('rooms').where('room_id', '==', roomId).get().then((querySnapshot) => {
-                if (!querySnapshot.empty) {
-                    const doc = querySnapshot.docs[0]; // Assuming room_id is unique and only one document will be returned
-                    document.getElementById('temperature').textContent = doc.data().temperature;
-                    document.getElementById('humidity').textContent = doc.data().humidity;
-                } else {
-                    console.log("No document found with room_id:", roomId);
-                    // Optionally, update the UI to reflect that no data was found
-                }
-            }).catch((error) => {
-                console.log("Error getting documents:", error);
-                // Optionally, handle the error in the UI as well
-            });
-        } else {
-            console.log("Room ID is required");
-            // Optionally, alert the user to input a room ID
-        }
-    });
-});
-
+//         if (roomIdInput) {
+//             db.collection('rooms').where('room_id', '==', roomId).get().then((querySnapshot) => {
+//                 if (!querySnapshot.empty) {
+//                     const doc = querySnapshot.docs[0]; // Assuming room_id is unique and only one document will be returned
+//                     document.getElementById('temperature').textContent = doc.data().temperature;
+//                     document.getElementById('humidity').textContent = doc.data().humidity;
+//                 } else {
+//                     console.log("No document found with room_id:", roomId);
+//                     // Optionally, update the UI to reflect that no data was found
+//                 }
+//             }).catch((error) => {
+//                 console.log("Error getting documents:", error);
+//                 // Optionally, handle the error in the UI as well
+//             });
+//         } else {
+//             console.log("Room ID is required");
+//             // Optionally, alert the user to input a room ID
+//         }
+//     });
+// });
