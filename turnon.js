@@ -1,13 +1,22 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
 // import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-analytics.js";
-import { collection, getFirestore, doc, getDocs, getDoc } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore.js";
+import { setDoc, collection, getFirestore, doc, getDocs, getDoc } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore.js";
 
 window.turnOnLights = async function (roomnum)
 {
     if(roomnum > 3)
         window.alert(`Invalid Room Number`);
     else
+    {
+        const lightRef = collection(db, "lightrequests");
+
+        await setDoc(doc(lightRef, "lightrequests"), 
+        {
+            on: true 
+        });
+
         window.alert(`Room ${roomnum} Lights On`);
+    }
 }
 
 const firebaseConfig = 
