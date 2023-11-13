@@ -14,7 +14,7 @@ window.changeIntensity = async function (roomnum, intensity)
 
         await setDoc(doc(lightRef, "lightrequests"), 
         {
-            roomnum: roomnum, on: false, intensity: intensity
+            roomnum: roomnum, on: true, intensity: intensity
         });
 
         window.alert(`Room ${roomnum} Intensity changed to ${intensity}%`);
