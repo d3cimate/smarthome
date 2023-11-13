@@ -2,7 +2,10 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebas
 // import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-analytics.js";
 import { collection, getFirestore, doc, getDocs, getDoc } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore.js";
 
-window.viewDoors = async function ()
+window.turnOffLights = async function (roomnum)
 {
-    document.getElementById('doors').textContent = `Room Name (Door Number): Bedroom 1 (1), Bedroom 2 (2), Living Room (3)`;
+    if(roomnum > 3)
+        window.alert(`Invalid Room Number`);
+    else
+        window.alert(`Room ${roomnum} Lights Off`);
 }
