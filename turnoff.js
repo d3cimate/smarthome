@@ -12,7 +12,7 @@ window.turnOffLights = async function (roomnum)
 
         await setDoc(doc(lightRef, "lightrequests"), 
         {
-            on: false 
+            roomnum:roomnum, on: false, intensity: 0
         });
 
         window.alert(`Room ${roomnum} Lights Off`);
