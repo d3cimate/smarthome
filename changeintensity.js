@@ -42,5 +42,6 @@ const db = getFirestore(app);
 const lightData = doc(db, "lightrequests", "lightrequests");
 const lightSnap = await getDoc(lightData);
 console.log("Light 1 data: ", lightSnap.data());
-console.log("Light 1 Intensity: ", lightSnap.data().intensity);
+console.log("Light 1 Room Number: ", lightSnap.data().roomnum);
 console.log("Light 1 On: ", lightSnap.data().on);
+console.log("Light 1 Intensity: ", lightSnap.data().intensity);
