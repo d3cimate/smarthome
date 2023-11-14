@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
 // import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-analytics.js";
-import { setDoc, collection, getFirestore, doc, getDocs, getDoc } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore.js";
+import { updateDoc, setDoc, collection, getFirestore, doc, getDocs, getDoc } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore.js";
 
 window.turnOffLights = async function (roomnum)
 {
@@ -10,7 +10,7 @@ window.turnOffLights = async function (roomnum)
     {
         const lightRef = collection(db, "lightrequests");
 
-        await setDoc(doc(lightRef, "lightrequests"), 
+        await updateDoc(doc(lightRef, "lightrequests"), 
         {
             roomnum: roomnum, on: false, intensity: 0
         });
