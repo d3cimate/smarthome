@@ -6,19 +6,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Unlocked</title>
   <link rel="stylesheet" href="style.css">
-  <!-- <script src="https://unpkg.com/akar-icons-fonts"></script>
-  <script src="https://unpkg.com/feather-icons"></script> -->
+  <script type="module" src="open.js"></script>  
 </head>
 
 <body>
     <main id="main" class="flexbox-col">
         <h1>Unlocked</h1>
-        <h2>Number of unlocked doors: 2</h2>
-        <h2>Number of unlocked windows: 3</h2>
-        <!-- <input type="text" id="roomnum" name="roomnum"><br><br> -->
     </main>
     <div class="buttonclass">
-        <!-- <button class="button" onclick = "window.location.href='lockdoor.html';"> Lock Door </button> -->
+        <button id="check" class="button" onclick="window.getResults()">Check Unlocked Doors and Windows</button>
+        <div id="result">
+            <p><span id="doors"></span></p>
+            <p><span id="windows"></span></p>
+        </div>
         <button class="button" onclick = "window.location.href='#';"> View Door Locations </button>
         <button class="button button2" onclick = "window.location.href='#';"> View Window Locations </button>
         <button class="button button3" onclick = "window.location.href='index.html';"> Main Menu </button>
