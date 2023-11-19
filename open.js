@@ -9,13 +9,13 @@ window.getResults = async function ()
         let ultrasonic1, ultrasonic2, ultrasonic3, openWindows = 0;
         let door1, door2, door3, openDoors = 0;
 
-        ultrasonic1 = getRoom1Ultrasonic();
-        ultrasonic2 = getRoom2Ultrasonic();
-        ultrasonic3 = getLivingRoomUltrasonic();
+        ultrasonic1 = await getRoom1Ultrasonic();
+        ultrasonic2 = await getRoom2Ultrasonic();
+        ultrasonic3 = await getLivingRoomUltrasonic();
 
-        door1 = getRoom1Door();
-        door2 = getRoom2Door();
-        door3 = getLivingRoomDoor();
+        door1 = await getRoom1Door();
+        door2 = await getRoom2Door();
+        door3 = await getLivingRoomDoor();
 
         console.log("Ultrasonic 1: ", ultrasonic1.value);
         console.log("Ultrasonic 2: ", ultrasonic2.value);
