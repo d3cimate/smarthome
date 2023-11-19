@@ -115,17 +115,17 @@ console.log("User Preferences 2: ", user2Snap.data());
 
 async function getRoom1Door()
 {
-  return room1Snap.data().locked.value;
+  return room1Snap.data().locked;
 }
 
 async function getRoom2Door()
 {
-  return room2Snap.data().locked.value;
+  return room2Snap.data().locked;
 }
 
 async function getLivingRoomDoor()
 {
-  return roomSnap.data().locked.value;
+  return roomSnap.data().locked;
 }
 
 async function getRoom1Temp()
@@ -140,7 +140,7 @@ async function getRoom1Hum()
 
 async function getRoom1Ultrasonic()
 {
-  return room1Snap.data().ultrasonic.value;
+  return room1Snap.data().ultrasonic;
 }
 
 async function getRoom1Motion()
@@ -160,7 +160,7 @@ async function getRoom2Hum()
 
 async function getRoom2Ultrasonic()
 {
-  return room2Snap.data().ultrasonic.value;
+  return room2Snap.data().ultrasonic;
 }
 
 async function getRoom2Motion()
@@ -190,7 +190,7 @@ async function getLivingRoomHum2()
 
 async function getLivingRoomUltrasonic()
 {
-  return roomSnap.data().ultrasonic.value;
+  return roomSnap.data().ultrasonic;
 }
 
 async function getLivingRoomMotion()
