@@ -17,13 +17,13 @@ window.getResults = async function ()
         door2 = getRoom2Door();
         door3 = getLivingRoomDoor();
 
-        console.log("Ultrasonic 1: ", ultrasonic1);
-        console.log("Ultrasonic 2: ", ultrasonic2);
-        console.log("Ultrasonic 3: ", ultrasonic3);
+        console.log("Ultrasonic 1: ", ultrasonic1.value);
+        console.log("Ultrasonic 2: ", ultrasonic2.value);
+        console.log("Ultrasonic 3: ", ultrasonic3.value);
 
-        console.log("Door 1: ", door1);
-        console.log("Door 2: ", door2);
-        console.log("Door 3: ", door3);
+        console.log("Door 1: ", door1.value);
+        console.log("Door 2: ", door2.value);
+        console.log("Door 3: ", door3.value);
 
         if(ultrasonic1 < 10)
             openWindows=openWindows+1;
