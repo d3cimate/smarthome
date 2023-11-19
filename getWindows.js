@@ -54,15 +54,6 @@ window.getWindows = async function ()
         {
             document.getElementById('livingroomwindow').textContent = `Living Room Window Closed.`;
         }
-
-        if(!door1)
-            openDoors=openDoors+1;
-
-        if(!door2)
-            openDoors=openDoors+1;
-
-        if(!door3)
-            openDoors=openDoors+1;
     } 
     catch (error) 
     {
