@@ -17,6 +17,14 @@ window.getResults = async function ()
         door2 = getRoom2Door();
         door3 = getLivingRoomDoor();
 
+        console.log("Ultrasonic 1: ", ultrasonic1);
+        console.log("Ultrasonic 2: ", ultrasonic2);
+        console.log("Ultrasonic 3: ", ultrasonic3);
+
+        console.log("Door 1: ", door1);
+        console.log("Door 2: ", door2);
+        console.log("Door 3: ", door3);
+
         if(ultrasonic1 < 10)
             openWindows=openWindows+1;
 
@@ -34,14 +42,6 @@ window.getResults = async function ()
 
         if(!door3)
             openDoors=openDoors+1;
-
-        console.log("Ultrasonic 1: ", ultrasonic1);
-        console.log("Ultrasonic 2: ", ultrasonic2);
-        console.log("Ultrasonic 3: ", ultrasonic3);
-
-        console.log("Door 1: ", door1);
-        console.log("Door 2: ", door2);
-        console.log("Door 3: ", door3);
 
         document.getElementById('doors').textContent = `Number of unlocked doors: ${openDoors}`;
         document.getElementById('windows').textContent = `Number of open windows: ${openWindows}`;
@@ -115,17 +115,17 @@ console.log("User Preferences 2: ", user2Snap.data());
 
 async function getRoom1Door()
 {
-  return room1Snap.data().locked;
+  return room1Snap.data().locked.value;
 }
 
 async function getRoom2Door()
 {
-  return room2Snap.data().locked;
+  return room2Snap.data().locked.value;
 }
 
 async function getLivingRoomDoor()
 {
-  return roomSnap.data().locked;
+  return roomSnap.data().locked.value;
 }
 
 async function getRoom1Temp()
@@ -160,7 +160,7 @@ async function getRoom2Hum()
 
 async function getRoom2Ultrasonic()
 {
-  return room2Snap.data().ultrasonic;
+  return room2Snap.data().ultrasonic.value;
 }
 
 async function getRoom2Motion()
@@ -190,67 +190,10 @@ async function getLivingRoomHum2()
 
 async function getLivingRoomUltrasonic()
 {
-  return roomSnap.data().ultrasonic;
+  return roomSnap.data().ultrasonic.value;
 }
 
 async function getLivingRoomMotion()
 {
   return roomSnap.data().motion;
 }
-
-// var button = document.getElementById("check");
-// button.addEventListener("click", getTempHum);
-
-// async function getTempHum(roomNum)
-// {
-  // if(roomNum == 1)
-  // {
-  //   document.body.innerHTML = getRoom1Temp();
-  //   document.body.innerHTML = getRoom1Hum();
-  //   window.print();
-  // }
-  
-  // else if(roomNum == 2)
-  // {
-  //   document.body.innerHTML = getRoom2Temp();
-  //   document.body.innerHTML = getRoom2Hum();
-  //   window.print();
-  // }
-  
-  // else if(roomNum == 3)
-  // {
-  //   document.body.innerHTML = getLivingRoomTemp1();
-  //   document.body.innerHTML = getLivingRoomTemp2();
-  //   document.body.innerHTML = getLivingRoomHum1();
-  //   document.body.innerHTML = getLivingRoomHum2();
-  //   window.print();
-  // }
-//   try 
-//   {
-//     let temperature, humidity;
-
-//     if (roomNum == 1) 
-//     {
-//       temperature = await getRoom1Temp();
-//       humidity = await getRoom1Hum();
-//     } 
-//     else if (roomNum == 2) 
-//     {
-//       temperature = await getRoom2Temp();
-//       humidity = await getRoom2Hum();
-//     } 
-//     else if (roomNum == 3) 
-//     {
-//       temperature = await getLivingRoomTemp1();
-//       humidity = await getLivingRoomHum1();
-//     }
-
-//     // Display the temperature and humidity on the page
-//     document.body.innerHTML = `Temperature: ${temperature}, Humidity: ${humidity}`;
-//     window.print();
-//   } 
-//   catch (error) 
-//   {
-//     console.error("Error fetching temperature and humidity:", error);
-//   }
-// }
