@@ -35,6 +35,14 @@ window.getResults = async function ()
         if(!door3)
             openDoors=openDoors+1;
 
+        console.log("Ultrasonic 1: ", ultrasonic1);
+        console.log("Ultrasonic 2: ", ultrasonic2);
+        console.log("Ultrasonic 3: ", ultrasonic3);
+
+        console.log("Door 1: ", door1);
+        console.log("Door 2: ", door2);
+        console.log("Door 3: ", door3);
+
         document.getElementById('doors').textContent = `Number of unlocked doors: ${openDoors}`;
         document.getElementById('windows').textContent = `Number of open windows: ${openWindows}`;
     } 
@@ -107,17 +115,17 @@ console.log("User Preferences 2: ", user2Snap.data());
 
 async function getRoom1Door()
 {
-  return room1Snap.data().doorlocked;
+  return room1Snap.data().locked;
 }
 
 async function getRoom2Door()
 {
-  return room2Snap.data().doorlocked;
+  return room2Snap.data().locked;
 }
 
 async function getLivingRoomDoor()
 {
-  return roomSnap.data().doorlocked;
+  return roomSnap.data().locked;
 }
 
 async function getRoom1Temp()
@@ -132,7 +140,7 @@ async function getRoom1Hum()
 
 async function getRoom1Ultrasonic()
 {
-  return room1Snap.data().ultrasonic;
+  return room1Snap.data().ultrasonic.value;
 }
 
 async function getRoom1Motion()
