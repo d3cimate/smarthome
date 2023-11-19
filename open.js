@@ -35,7 +35,7 @@ window.getResults = async function ()
         if(!door3)
             openDoors=openDoors+1;
 
-        document.getElementById('windows').textContent = `Number of unlocked doors: ${openDoors}`;
+        document.getElementById('doors').textContent = `Number of unlocked doors: ${openDoors}`;
         document.getElementById('windows').textContent = `Number of open windows: ${openWindows}`;
     } 
     catch (error) 
