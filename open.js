@@ -18,22 +18,22 @@ window.getResults = async function ()
         door3 = getLivingRoomDoor();
 
         if(ultrasonic1 < 10)
-            openWindows++;
+            openWindows=openWindows+1;
 
         if(ultrasonic2 < 10)
-            openWindows++;
+            openWindows=openWindows+1;
 
         if(ultrasonic3 < 10)
-            openWindows++;
+            openWindows=openWindows+1;
 
         if(!door1)
-            openDoors++;
+            openDoors=openDoors+1;
 
         if(!door2)
-            openDoors++;
+            openDoors=openDoors+1;
 
         if(!door3)
-            openDoors++;
+            openDoors=openDoors+1;
 
         document.getElementById('windows').textContent = `Number of unlocked doors: ${openDoors}`;
         document.getElementById('windows').textContent = `Number of open windows: ${openWindows}`;
