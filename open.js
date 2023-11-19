@@ -115,17 +115,17 @@ console.log("User Preferences 2: ", user2Snap.data());
 
 async function getRoom1Door()
 {
-  return room1Snap.data().locked;
+  return room1Snap.data().doorlocked;
 }
 
 async function getRoom2Door()
 {
-  return room2Snap.data().locked;
+  return room2Snap.data().doorlocked;
 }
 
 async function getLivingRoomDoor()
 {
-  return roomSnap.data().locked;
+  return roomSnap.data().doorlocked;
 }
 
 async function getRoom1Temp()
