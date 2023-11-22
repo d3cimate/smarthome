@@ -1,31 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Control Lighting</title>
-  <link rel="stylesheet" href="style.css">
-  <script type="module" src="turnon.js"></script>  
-  <script type="module" src="turnoff.js"></script>  
-  <script type="module" src="changeintensity.js"></script>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Lighting</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="turnon.js"></script>  
+    <script type="module" src="turnoff.js"></script>  
+    <script type="module" src="changeintensity.js"></script>
 </head>
-
 <body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="doorlocks.html">Door Locks</a></li>
+                <li><a href="temp.html">Temperature & Humidity</a></li>
+                <li><a href="open.html">Open Doors & Windows</a></li>
+                <li><a href="cameras.html">View Cameras</a></li>
+            </ul>
+        </nav>
+    </header>
     <main id="main" class="flexbox-col">
         <h1>Control Lighting</h1>
-        <h1>Insert Room Number</h1>
-        <input type="text" id="roomnum" name="roomnum"><br><br>
-    </main>
-    <div class="buttonclass">
-        <!-- <button class="button" onclick = "window.location.href='lockdoor.html';"> Lock Door </button> -->
-        <button class="button" onclick = "window.turnOnLights(document.getElementById('roomnum').value)"> Turn On Lights </button>
-        <button class="button" onclick = "window.turnOffLights(document.getElementById('roomnum').value)"> Turn Off Lights </button>
+        <label for="room-select">Choose a room:</label>
+        <select id="room-select" name="rooms">
+            <option value="1">Bedroom 1</option>
+            <option value="2">Bedroom 2</option>
+            <option value="3">Living Room</option>
+        </select><br><br>
+        <button class="button" onclick="window.turnOnLights(document.getElementById('room-select').value)">Turn On Lights</button>
+        <button class="button" onclick="window.turnOffLights(document.getElementById('room-select').value)">Turn Off Lights</button>
         <h2>Change Intensity</h2>
-        <input type="text" id="intensity" name="intensity"><br><br>
-        <button class="button" onclick="window.changeIntensity(document.getElementById('roomnum').value, document.getElementById('intensity').value)"> Change Intensity </button>
-        <button class="button button3" onclick = "window.location.href='index.html';"> Main Menu </button>
-    </div>
+        <input type="range" id="intensity" name="intensity" min="0" max="100"><br><br>
+        <button class="button" onclick="window.changeIntensity(document.getElementById('room-select').value, document.getElementById('intensity').value)">Change Intensity</button>
+        <!-- <button class="button button3" onclick="window.location.href='index.html';">Main Menu</button> -->
+    </main>
+    <footer>
+        <p>&copy; 2023 Smarthome System</p>
+        <p>Contact Us: <a href="mailto:support@smarthomesystem.com">support@smarthomesystem.com</a></p>
+    </footer>
 </body>
-
 </html>

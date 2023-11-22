@@ -1,56 +1,87 @@
-@import url("https://fonts.googleapis.com/css?family=Raleway:400,400i,700");
-
 body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f8ff; /* Light blue background */
+}
+
+.navbar {
+  background-color: #004d99; /* Dark blue for navbar */
+  overflow: hidden;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  float: left;
+}
+
+.navbar li a {
   display: block;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background: #ffffff;
-}
-
-h1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-h2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-size: 16px;
-}
-
-.buttonclass{
-  display: inline-block;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.button {
-  border: none;
   color: white;
-  padding: 10px 32px;
   text-align: center;
+  padding: 14px 16px;
   text-decoration: none;
-  font-size: 12px;
-  margin: 4px 2px;
+}
+
+.navbar li a:hover {
+  background-color: #66b3ff; /* Lighter blue on hover */
+  color: black;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  padding: 10px;
+}
+
+.grid-item {
+  background-color: #b3d9ff; /* Very light blue for grid items */
+  border: none;
+  padding: 20px;
+  font-size: 16px;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+.grid-item:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
+}
+
+button {
+  background-color: #4da6ff; /* Bright blue for buttons */
+  color: white;
+  padding: 10px 15px;
+  margin: 10px 0;
+  border: none;
   cursor: pointer;
-  width: 50%;
-  height: 10%;
-  background-color: #0044ff;
-  border-radius: 8px;
+  transition: 0.3s;
 }
 
-.button2 {
-  background-color: black;
+button:hover {
+  background-color: #1a75ff; /* Slightly darker blue on hover */
 }
 
-.button3 {
-  position: relative;
-  margin-top: 100%;
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #004d99; /* Consistent with navbar */
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+input[type=text] {
+  padding: 10px;
+  margin: 5px 0 20px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
 }

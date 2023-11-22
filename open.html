@@ -2,35 +2,51 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Unlocked</title>
-  <link rel="stylesheet" href="style.css">
-  <script type="module" src="open.js"></script>  
-  <script type="module" src="getDoors.js"></script>  
-  <script type="module" src="getWindows.js"></script>  
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unlocked Doors & Windows - Smarthome System</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="open.js"></script>
+    <script type="module" src="getDoors.js"></script>
+    <script type="module" src="getWindows.js"></script>
 </head>
 
 <body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="lighting.html">Control Lighting</a></li>
+                <li><a href="doorlocks.html">Door Locks</a></li>
+                <li><a href="temp.html">Temperature & Humidity</a></li>
+                <li><a href="cameras.html">View Cameras</a></li>
+                <li><a href="face.html">Check Face ID</a></li>
+                <li><a href="entrances.html">Number of Entrances</a></li>
+            </ul>
+        </nav>
+    </header>
     <main id="main" class="flexbox-col">
-        <h1>Unlocked</h1>
-    </main>
-    <div class="buttonclass">
-        <button id="check" class="button" onclick="window.getResults()">Check Unlocked Doors and Windows</button>
-        <div id="result">
-            <p><span id="doors"></span></p>
-            <p><span id="bedroom1door"></span></p>
-            <p><span id="bedroom2door"></span></p>
-            <p><span id="livingroomdoor"></span></p>
-            <p><span id="windows"></span></p>
-            <p><span id="bedroom1window"></span></p>
-            <p><span id="bedroom2window"></span></p>
-            <p><span id="livingroomwindow"></span></p>
+        <h1>Check Unlocked Doors and Windows</h1>
+        <div class="buttonclass">
+            <button id="check" class="button" onclick="window.getResults()">Check Unlocked Doors and Windows</button>
+            <div id="result">
+                <p><span id="doors"></span></p>
+                <p><span id="bedroom1door"></span></p>
+                <p><span id="bedroom2door"></span></p>
+                <p><span id="livingroomdoor"></span></p>
+                <p><span id="windows"></span></p>
+                <p><span id="bedroom1window"></span></p>
+                <p><span id="bedroom2window"></span></p>
+                <p><span id="livingroomwindow"></span></p>
+            </div>
+            <button class="button" onclick = "window.getDoors()"> View Door Locations </button>
+            <button class="button button2" onclick = "window.getWindows()"> View Window Locations </button>
         </div>
-        <button class="button" onclick = "window.getDoors()"> View Door Locations </button>
-        <button class="button button2" onclick = "window.getWindows()"> View Window Locations </button>
-        <button class="button button3" onclick = "window.location.href='index.html';"> Main Menu </button>
-    </div>
+    </main>
+    <footer>
+        <p>&copy; 2023 Smarthome System</p>
+        <p>Contact Us: <a href="mailto:support@smarthomesystem.com">support@smarthomesystem.com</a></p>
+    </footer>
 </body>
 
 </html>

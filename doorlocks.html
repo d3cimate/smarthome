@@ -1,29 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Door Lock</title>
-  <link rel="stylesheet" href="style.css">
-  <script type="module" src="lockdoor.js"></script>  
-  <script type="module" src="unlockdoor.js"></script>  
-  <script type="module" src="viewdoors.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Door Locks</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="lockdoor.js"></script>
+    <script type="module" src="unlockdoor.js"></script>
+    <script type="module" src="viewdoors.js"></script>
 </head>
 <body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="lighting.html">Control Lighting</a></li>
+                <li><a href="temp.html">Temperature & Humidity</a></li>
+                <li><a href="open.html">Open Doors & Windows</a></li>
+                <li><a href="cameras.html">View Cameras</a></li>
+            </ul>
+        </nav>
+    </header>
     <main id="main" class="flexbox-col">
         <h1>Door Locks</h1>
-        <h1>Insert Door Number</h1>
-        <input type="text" id="doornum" name="doornum"><br><br>
+        <label for="room-select">Choose a room:</label>
+        <select id="room-select" name="rooms">
+            <option value="1">Bedroom 1</option>
+            <option value="2">Bedroom 2</option>
+            <option value="3">Living Room</option>
+        </select><br><br>
+        <button class="button" onclick="window.lockDoor(document.getElementById('room-select').value)">Lock Door</button>
+        <button class="button" onclick="window.unlockDoor(document.getElementById('room-select').value)">Unlock Door</button>
+        <!-- <button class="button" onclick="window.viewDoors()">View Door Numbers</button> -->
     </main>
-    <div class="buttonclass">
-        <button id="lock" class="button" onclick = "window.lockDoor(document.getElementById('doornum').value)"> Lock Door </button>
-        <button id="unlock" class="button" onclick = "window.unlockDoor(document.getElementById('doornum').value)"> Unlock Door </button>
-        <button class="button button2" onclick = "window.viewDoors()"> View Door Numbers </button>
-        <div id="result">
-            <p><span id=""></span></p>
-            <p><span id="doors"></span></p>
-        </div>
-        <button class="button button3" onclick = "window.location.href='index.html';"> Main Menu </button>
-    </div>
+    <footer>
+        <p>&copy; 2023 Smarthome System</p>
+        <p>Contact Us: <a href="mailto:support@smarthomesystem.com">support@smarthomesystem.com</a></p>
+    </footer>
 </body>
 </html>
