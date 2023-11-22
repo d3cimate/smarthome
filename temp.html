@@ -6,6 +6,7 @@
   <title>House Temperature</title>
   <link rel="stylesheet" href="style.css">
   <script type="module" src="firestore.js"></script>  
+  <script type="module" src="accontrol.js"></script>  
 </head>
 <body>
     <main id="main" class="flexbox-col">
@@ -19,7 +20,7 @@
             <p><span id="temperature"></span></p>
             <p><span id="humidity"></span></p>
         </div>
-        <button class="button button2" onclick="window.location.href='controlac.html';">Control AC</button>
+        <button class="button button2" onclick="window.controlAC(document.getElementById('roomnum').value)">Control AC</button>
         <button class="button button3" onclick="window.location.href='index.html';">Main Menu</button>
     </div>
 </body>
