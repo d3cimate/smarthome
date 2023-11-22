@@ -32,17 +32,12 @@ window.getTempHum = async function (roomNum)
         
         if(roomNum == 3)
         {
-            document.getElementById('temperature').textContent = `Living Room: Temperature 1: ${temperature1}°C, Temperature 2: ${temperature2}°C`;
+            document.getElementById('temperature').textContent = `Temperature 1: ${temperature1}°C, Temperature 2: ${temperature2}°C`;
             document.getElementById('humidity').textContent = `Humidity 1: ${humidity1}%, Humidity 2: ${humidity2}%`;
         }
-        else if(roomNum == 1)
+        else
         {
-            document.getElementById('temperature').textContent = `Bedroom 1: Temperature: ${temperature}°C`;
-            document.getElementById('humidity').textContent = `Humidity: ${humidity}%`;
-        }
-        else if(roomNum == 2)
-        {
-            document.getElementById('temperature').textContent = `Bedroom 2: Temperature: ${temperature}°C`;
+            document.getElementById('temperature').textContent = `Temperature: ${temperature}°C`;
             document.getElementById('humidity').textContent = `Humidity: ${humidity}%`;
         }
     } 
