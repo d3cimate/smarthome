@@ -26,8 +26,12 @@
     <main id="main" class="flexbox-col">
         <h1>House Temperature and Humidity</h1>
         <div class="input-group">
-            <label for="roomnum">Insert Room Number:</label>
-            <input type="text" id="roomnum" name="roomnum">
+            <label for="roomnum">Select Room:</label>
+            <select id="roomnum" name="roomnum">
+                <option value="1">Bedroom 1</option>
+                <option value="2">Bedroom 2</option>
+                <option value="3">Living Room</option>
+            </select>
             <button id="check" class="button" onclick="window.getTempHum(document.getElementById('roomnum').value)">Check Temperature and Humidity</button>
         </div>
         <div id="result">
